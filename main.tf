@@ -20,6 +20,10 @@ resource "aws_s3_bucket" "s3_tf" {
 }
 
 terraform {
+  required_version = ">= 1.5.0, < 2.0.0"
+}
+
+terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
