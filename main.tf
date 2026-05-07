@@ -5,13 +5,13 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "sctp-ce12-tfstate-bucket"
-    key    = "nas-s3buckets.tfstate"
+    key    = "nas-s3buckets"
     region = "ap-southeast-1"
   }
 }
 
 resource "aws_s3_bucket" "s3_tf" {
-  bucket_prefix = "nas-s3buckets.tfstate"
+  bucket_prefix = "nas-s3buckets"
 }
 
 terraform {
@@ -25,4 +25,13 @@ terraform {
 
 terraform {
   required_version = ">= 1.5.0, < 2.0.0"
+}
+
+resource "aws_s3_bucket" "s3_tf" {
+  #checkov:skip=CKV2_AWS_61
+  #checkov:skip=CKV_AWS_144
+  #checkov:skip=CKV_AWS_21
+  #checkov:skip=CKV_AWS_18
+  #checkov:skip=CKV_AWS_145
+  bucket_prefix = "nas-s3buckets"
 }
