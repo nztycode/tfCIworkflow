@@ -26,12 +26,3 @@ terraform {
 terraform {
   required_version = ">= 1.5.0, < 2.0.0"
 }
-
-resource "aws_s3_bucket" "s3_tf" {
-  #checkov:skip=CKV2_AWS_61
-  #checkov:skip=CKV_AWS_144
-  #checkov:skip=CKV_AWS_21
-  #checkov:skip=CKV_AWS_18
-  #checkov:skip=CKV_AWS_145
-  bucket_prefix = "nas-s3buckets"
-}
