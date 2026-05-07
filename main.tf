@@ -11,6 +11,11 @@ terraform {
 }
 
 resource "aws_s3_bucket" "s3_tf" {
+  #checkov:skip=CKV2_AWS_62
+  #checkov:skip=CKV2_AWS_6
+  #checkov:skip=CKV_AWS_144
+  #checkov:skip=CKV_AWS_21
+  #checkov:skip=CKV_AWS_145
   bucket_prefix = "nas-s3buckets"
 }
 
@@ -21,22 +26,6 @@ terraform {
       version = "6.44.0"
     }
   }
-}
-
-required_providers {
-  aws = {
-    source  = "hashicorp/aws"
-    version = "6.44.0"
-  }
-}
-
-resource "aws_s3_bucket" "s3_tf" {
-  #checkov:skip=CKV2_AWS_62
-  #checkov:skip=CKV2_AWS_6
-  #checkov:skip=CKV_AWS_144
-  #checkov:skip=CKV_AWS_21
-  #checkov:skip=CKV_AWS_145
-  bucket_prefix = "nas-s3buckets"
 }
 
 data "aws_caller_identity" "current" {}
