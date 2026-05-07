@@ -5,11 +5,11 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "sctp-ce12-tfstate-bucket"
-    key    = "terraform.tfstate"
+    key    = "nas-s3TFciworkflow"
     region = "ap-southeast-1"
   }
 }
 
 resource "aws_s3_bucket" "s3_tf" {
-  bucket_prefix =   "nas-s3buckets"
+  bucket_prefix = "nas-s3TFciworkflow"
 }
