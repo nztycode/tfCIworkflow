@@ -5,7 +5,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "sctp-ce12-tfstate-bucket"
-    key    = "nas-s3buckets"
+    key    = "nas-s3buckets.tfstate"
     region = "ap-southeast-1"
   }
 }
