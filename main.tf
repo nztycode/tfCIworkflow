@@ -56,7 +56,7 @@ resource "aws_s3_bucket" "logging" {
   #checkov:skip=CKV_AWS_21
   #checkov:skip=CKV_AWS_145
   #checkov:skip=CKV2_AWS_61
-  bucket = "luqman-ce12-32-logging-bucket"
+  bucket = "nas-s3buckets"
 }
 
 data "aws_iam_policy_document" "logging_bucket_policy" {
